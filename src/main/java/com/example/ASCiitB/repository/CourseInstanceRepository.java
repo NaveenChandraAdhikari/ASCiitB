@@ -18,7 +18,13 @@ public interface CourseInstanceRepository extends JpaRepository<CourseInstance,L
 
 
     Optional<CourseInstance> findByYearAndSemesterAndId(int year, int semester, Long id);
+
+
+    
+    @Query("SELECT DISTINCT c.semester FROM CourseInstance c ORDER BY c.semester")
+    List<Integer> findDistinctSemesters();
 }
+
 
 
 
