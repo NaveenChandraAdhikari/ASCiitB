@@ -19,6 +19,9 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
+      @Autowired
+    private CourseInstanceRepository courseInstanceRepository;
+
     // Courses API
     @PostMapping("/courses")
     public ResponseEntity<Course> addCourse(@RequestBody Course course) {
