@@ -93,5 +93,12 @@ public class CourseController {
         CourseInstance instance = courseService.getCourseInstanceById(year, semester, id);
         return ResponseEntity.ok(instance);
     }
+    
+//for unique mapping
+    @GetMapping("instances/semesters")
+    public ResponseEntity<List<Integer>> getAvailableSemesters() {
+        List<Integer> semesters = courseInstanceRepository.findDistinctSemesters();
+        return ResponseEntity.ok(semesters);
+    }
 
 }
