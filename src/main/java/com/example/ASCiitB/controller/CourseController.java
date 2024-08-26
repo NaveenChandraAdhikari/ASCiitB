@@ -19,6 +19,9 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
+      @Autowired
+    private CourseInstanceRepository courseInstanceRepository;
+
     // Courses API
     @PostMapping("/courses")
     public ResponseEntity<Course> addCourse(@RequestBody Course course) {
@@ -92,6 +95,13 @@ public class CourseController {
             @PathVariable Long id) {
         CourseInstance instance = courseService.getCourseInstanceById(year, semester, id);
         return ResponseEntity.ok(instance);
+    }
+    
+//for unique mapping
+    @GetMapping("instances/semesters")
+    public ResponseEntity<List<Integer>> getAvailableSemesters() {
+        List<Integer> semesters = courseInstanceRepository.findDistinctSemesters();
+        return ResponseEntity.ok(semesters);
     }
 
 }
