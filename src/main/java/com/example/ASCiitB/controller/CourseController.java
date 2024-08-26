@@ -4,6 +4,7 @@ package com.example.ASCiitB.controller;
 import com.example.ASCiitB.course.Course;
 import com.example.ASCiitB.dto.CourseInstanceRequest;
 import com.example.ASCiitB.entity.CourseInstance;
+import com.example.ASCiitB.repository.CourseInstanceRepository;
 import com.example.ASCiitB.service.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
