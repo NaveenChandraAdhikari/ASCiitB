@@ -77,6 +77,8 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
+		<finalName>assignment_backend-images</finalName>
 	</build>
 
 </project>
